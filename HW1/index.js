@@ -3,14 +3,17 @@ const someFunction = ( arr ) => {
     let minNumber = arr[0];
     let sumArr = 0;
     for (i = 0; i < arr.length; i++){
-        if (typeof(arr[i]) === "number"){
-            if (maxNumber < arr[i]) {
-                maxNumber = arr[i]
-            }  else if (minNumber > arr[i]) {
-                minNumber = arr[i]
-            }
-                sumArr +=arr[i]
-        }
+       if (isNaN(arr[i]) || typeof (arr[i]) == "string") {
+           return null
+       }
+          else if (typeof (arr[i]) === "number") {
+               if (maxNumber < arr[i]) {
+                   maxNumber = arr[i]
+               } else if (minNumber > arr[i]) {
+                   minNumber = arr[i]
+               }
+               sumArr += arr[i]
+           }
     }
     return { min:minNumber, max:maxNumber, sum:sumArr}
 }

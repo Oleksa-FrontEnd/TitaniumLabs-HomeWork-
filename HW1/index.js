@@ -1,19 +1,13 @@
 const someFunction = ( arr ) => {
-    let maxNumber = arr[0];
-    let minNumber = arr[0];
-    let sumArr = 0;
-    for (i = 0; i < arr.length; i++){
-       if (isNaN(arr[i])) {
-           return null
-       }
-          else if (arr[i] !== NaN) {
-               if (maxNumber < arr[i]) {
-                   maxNumber = arr[i]
-               } else if (minNumber > arr[i]) {
-                   minNumber = arr[i]
-               }
-               sumArr += arr[i]
-           }
+    let maxNumber = Math.max(...arr);
+    let minNumber = Math.min(...arr);
+    let sumArr = 0;  //= arr.reduce(function(a,b){return(a+b)});
+
+
+    for (i = 0; i < arr.length; i++) {
+        if(typeof arr[i] === 'number'){
+            sumArr +=arr[i]
+        } else {return null}
     }
     return { min:minNumber, max:maxNumber, sum:sumArr}
 }

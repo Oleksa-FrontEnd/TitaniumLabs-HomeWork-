@@ -3,10 +3,10 @@ const someFunction = ( arr ) => {
     let minNumber = arr[0];
     let sumArr = 0;
     for (i = 0; i < arr.length; i++){
-       if (isNaN(arr[i]) || typeof (arr[i]) == "string") {
+       if (isNaN(arr[i])) {
            return null
        }
-          else if (typeof (arr[i]) === "number") {
+          else if (arr[i] !== NaN) {
                if (maxNumber < arr[i]) {
                    maxNumber = arr[i]
                } else if (minNumber > arr[i]) {

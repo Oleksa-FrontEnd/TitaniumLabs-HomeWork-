@@ -7,14 +7,32 @@ const someFunction = ( arr ) => {
 
     let newArrayNumber = newArr.filter(deleteString);
 
+  //My version
     if (newArrayNumber.length === 0) return  {min:null, max:null, sum:null};
+    let minNumber = Math.min(...newArrayNumber);
+    let maxNumber = Math.max(...newArrayNumber);
+    let sumArr = null;
+    for (i = 0; i < newArrayNumber.length; i++){
+        sumArr += newArrayNumber[i]
+    }
 
-        let minNumber = Math.min(...newArrayNumber);
-        let maxNumber = Math.max(...newArrayNumber, null);
-        let sumArr = null;
-            for (i = 0; i < newArrayNumber.length; i++){
-                sumArr += newArrayNumber[i]
-            }
+ /*   //version 2
+    let minNumber = null;
+    let maxNumber = null;
+    let i;
+    let len;
+
+    for (i = 0, len = newArrayNumber.length; i < len; ++i)
+    {
+        let elem = newArrayNumber[i];
+        if (minNumber === null || minNumber > elem) minNumber = elem;
+        if (maxNumber === null || maxNumber < elem) maxNumber = elem;
+    }
+    let sumArr = null;
+    for (i = 0; i < newArrayNumber.length; i++){
+        sumArr += newArrayNumber[i]
+    }
+*/
     return { min:minNumber, max:maxNumber, sum:sumArr}
 }
 

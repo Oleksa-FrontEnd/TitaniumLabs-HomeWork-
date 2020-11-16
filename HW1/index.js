@@ -1,15 +1,16 @@
 const someFunction = ( arr ) => {
     let newArr = arr.filter(Number);
-    //console.log (newArr);
+
     function deleteString(value) {
         return (typeof value === 'number');
     }
 
     let newArrayNumber = newArr.filter(deleteString);
-    //console.log(newArrayNumber)
+
+    if (newArrayNumber.length === 0) return  {min:null, max:null, sum:null};
 
         let minNumber = Math.min(...newArrayNumber);
-        let maxNumber = Math.max(...newArrayNumber);
+        let maxNumber = Math.max(...newArrayNumber, null);
         let sumArr = null;
             for (i = 0; i < newArrayNumber.length; i++){
                 sumArr += newArrayNumber[i]

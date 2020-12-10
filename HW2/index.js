@@ -1,32 +1,16 @@
 let arr = [2,1,5,0,3,4,7,2,3,1,0];
 
-function maxWater(arr) {
-    var leftMax = 0,
-        rightMax = 0,
-        left = 0,
-        right = arr.length - 1,
-        volume = 0;
-
-    while(left < right) {
-
-        if(arr[left] > leftMax) {
-            leftMax = arr[left]
-        }
-
-        if(arr[right] > rightMax) {
-            rightMax = arr[right]
-        }
-
-        if (leftMax >= rightMax) {
-            volume += rightMax - arr[right]
-            right--
-        } else {
-            volume += leftMax - arr[left]
-            left++
+function maxWater(arr){
+    var heightLoc = {};
+    var waterSum = 0;
+    for (var x = 0; x < arr.length; x++) {
+        for (var y = 0; y < arr[x]; y++) {
+            var height = y + '';
+            waterSum += height in heightLoc ? (x - heightLoc[height]) - 1 : 0;
+            heightLoc[height] = x; // record last time we saw a wall of this height
         }
     }
-
-    return volume
+ return waterSum;
 }
 document.write(maxWater(arr) + '</br>');
 
@@ -37,6 +21,7 @@ arr5 = [2, 2, 1, 2, 2, 3, 0, 1, 2] // 4
 arr6 = [2, 1, 5, 0, 3, 4, 7, 2, 3, 1, 8] // 24
 arr7 = [2, 2, 2, 2, 2] // 0
 arr8 = [3,5]//0
+arr9 =  [2,7,2,7,4,7,1,7,3,7]//18
 document.write(maxWater(arr2) + '</br>');
 document.write(maxWater(arr3) + '</br>');
 document.write(maxWater(arr4) + '</br>');
@@ -44,3 +29,4 @@ document.write(maxWater(arr5) + '</br>');
 document.write(maxWater(arr6) + '</br>');
 document.write(maxWater(arr7) + '</br>');
 document.write(maxWater(arr8) + '</br>');
+document.write(maxWater(arr9) + '</br>');

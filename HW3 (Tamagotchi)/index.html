@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Tamagotchi</title>
+</head>
+<body>
+<div id="bloco">
+    <div id="blocoImagem">
+        <img src="images/azul.jpg" class="pet" id="pet" alt="image">
+    </div>
+    <div class="lado">
+        <h2><strong>Status:</strong></h2>
+        <span>Hunger:</span> <div id="hunger" class="barra">100%</div>
+        <span>Hygiene:</span> <div id="hygiene" class="barra">100%</div>
+        <span>Sleep:</span> <div id="sleep" class="barra">100%</div>
+        <span>Mood:</span> <div id="mood" class="barra">100%</div>
+        <span>Talk:</span> <div id="talk" class="barra">100%</div>
+        <span>Drink:</span> <div id="drink" class="barra">100%</div>
+    </div>
+
+    <div id="blocoBotao">
+        <p><span class="botao" onclick="Feed()">Feed</span></p>
+        <p><span class="botao" onclick="Cleaning()">Cleaning</span></p>
+        <p><span class="botao" onclick="Sleep()">Sleep</span></p>
+        <p><span class="botao" onclick="Play()">Play</span></p>
+        <p><span class="botao" onclick="Talk()">Talk</span></p>
+        <p><span class="botao" onclick="Drink()">Drink</span></p>
+    </div>
+    <h3><div id="mensagem"></div></h3>
+</div>
+
+<script src="tamagotchi.js"></script>
+</body>
+</html>

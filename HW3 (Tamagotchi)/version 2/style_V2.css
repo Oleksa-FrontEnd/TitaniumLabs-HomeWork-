@@ -1,0 +1,29 @@
+.button{
+    border-radius: 4px;
+    background-color: paleturquoise;
+    border: 2px solid #000000;
+}
+.volume{
+    color: blue;
+}
+.button{
+    margin-top: 10px;
+}
+#myProgress{
+    position: relative;
+    width: 420px;
+    height: 30px;
+    background-color: silver;
+    margin-top: 20px;
+}
+#myBar{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    background-color: #4caf50;
+}
+#label{
+    text-align: center;
+    line-height: 30px;
+    color: #ddd;
+}

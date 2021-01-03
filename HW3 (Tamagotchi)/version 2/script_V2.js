@@ -1,19 +1,28 @@
-let health = 100;
+let health = 42;
 let satiety = 100;
 let joy = 100;  //радость
 let purity = 100; //чистота
 
 function cure() {
-    health = health + 5;
-    document.getElementById("health").innerHTML = health;
+    if (health < 100){
+        health = health + 5;
+    } else if(health >= 100){
+        health = 100;
+        document.getElementById("health").innerHTML = health;
+    }
 }
-setInterval(function life (){
-    --health;
-    document.getElementById("health").innerHTML = health;
+let time = setInterval(function life (){
+        if (health <= 0){
+            health = 'pet died';
+            clearInterval(time)
+            document.getElementById("health").innerHTML = health;
+        } else{
+            --health;
+            document.getElementById("health").innerHTML = health;
+        }
+    }, 50)
 
-    }, 1000)
-
-//progressBar
+/*progressBar
 function move(){
     var elem = document.getElementById('myBar');
     var width = 60;
@@ -32,4 +41,4 @@ setInterval(function life (){
     --width;
     document.getElementById("width").innerHTML = width;
 }, 1000)
-
+*/

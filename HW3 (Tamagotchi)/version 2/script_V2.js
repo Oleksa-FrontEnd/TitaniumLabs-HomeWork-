@@ -1,17 +1,25 @@
+let progressElement = document.getElementById('user-progress');
+let start = 100;
 function userProgress(time){
-    let start = 0;
+
     var time = Math.round(time * 1000/100);
-    let progressElement = document.getElementById('user-progress');
+    //let progressElement = document.getElementById('user-progress');
     let intervalId = setInterval(function (){
-        if (start > 100){
+        if (start < 0){
             clearInterval(intervalId);
             userProgressCallBack();
         } else {
             progressElement.value = start;
-            start = start + 5;
+            start = start - 1;
         }
     }, time)
+
 }
+
+function feed(){
+    start = progressElement.value + 20;
+}
+
 function userProgressCallBack(){
     document.querySelector('.hidden-block').style.display = 'block'
 }

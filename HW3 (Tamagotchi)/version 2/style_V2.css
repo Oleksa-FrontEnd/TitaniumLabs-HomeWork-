@@ -1,7 +1,9 @@
+#user-progress{
+    height: 42px;
+}
 .hidden-block{
     display: none;
 }
-
 /*
 #myProgress{
     position: relative;

@@ -1,16 +1,15 @@
 let progressElement = document.getElementById('user-progress');
 let start = 100;
-function userProgress(time){
 
+function userProgress(time){
     var time = Math.round(time * 1000/100);
-    //let progressElement = document.getElementById('user-progress');
     let intervalId = setInterval(function (){
         if (start < 0){
             clearInterval(intervalId);
             userProgressCallBack();
         } else {
             progressElement.value = start;
-            start = start - 1;
+            start = start - 0.2;
         }
     }, time)
 
@@ -18,6 +17,21 @@ function userProgress(time){
 
 function feed(){
     start = progressElement.value + 20;
+}
+function clean(){
+    start = progressElement.value + 10;
+}
+function play(){
+    start = progressElement.value + 5;
+}
+function drink(){
+    start = progressElement.value + 15;
+}
+function call(){
+    start = progressElement.value + 3;
+}
+function scratch(){
+    start = progressElement.value + 5;
 }
 
 function userProgressCallBack(){
@@ -41,7 +55,7 @@ let time2 = setInterval(function life (){
     } else{
         --health;
         var elem = document.getElementById('health');
-        elem.style.healtth = health + '%';
+        elem.style.health = health + '%';
         document.getElementById("health").innerHTML = health + '%';
     }
 }, 500)

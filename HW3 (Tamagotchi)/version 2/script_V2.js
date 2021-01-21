@@ -1,23 +1,25 @@
-let petBar = 42;
-let time = Math.round(time * 1000/100);
+let width = 42 ;
+//let time = Math.round(time * 1000/100);
 function petProgress(time){
-    //var time = Math.round(time * 1000/100);
-    let intervalId = setInterval(function (){
-        if (petBar <= 0){
-            petBar = 'pet died';
+    var time = Math.round(time * 1000/100);
+    var elem = document.getElementById("petBar");
+    let intervalId = setInterval(frame, 10);
+
+    function frame(){
+        if (width <= 0){
             clearInterval(time)
-            document.getElementById("petBar").innerHTML = petBar;
             petProgressCallBack();
         } else {
-            petBar = petBar - 1;
-            petBar.style.width = petBar + '%';
-            document.getElementById("petBar").innerHTML = petBar + '%';
-        }
-    }, time)
+            --width;
+            elem.style.width = width + 'px';
+            elem.innerHTML = width  + '%';
+          }
+
+    }
 }
 
 function feed(){
-    petBar = petBar.value + 20;
+    width = width + 10;
 }
 function clean(){
     petBar = petBar.value + 10;
@@ -35,40 +37,12 @@ function scratch(){
     petBar = petBar.value + 5;
 }
 
-function userProgressCallBack(){
+function petProgressCallBack(){
+    document.getElementById('petProgress').style.display = 'none'
     document.querySelector('.hidden-block').style.display = 'block'
 }
 petProgress(10);
 
-/*
-let time2 = setInterval(function life (){
-    if (health <= 0){
-        health = 'pet died';
-        clearInterval(time)
-        document.getElementById("health").innerHTML = health;
-    } else{
-        --health;
-        var elem = document.getElementById('health');
-        elem.style.health = health + '%';
-        document.getElementById("health").innerHTML = health + '%';
-    }
-}, 500)
-
-function move(){
-    var elem = document.getElementById('myBar');
-    var width = 42;
-    var id = setInterval(frame, 50);
-    function frame(){
-        if (width >= 100){
-            clearInterval(id)
-        } else{
-            width = width + 1;
-            elem.style.width = width + '%';
-            document.getElementById('label').innerHTML = width + '%';
-        }
-    }
-}
-*/
 
 
 

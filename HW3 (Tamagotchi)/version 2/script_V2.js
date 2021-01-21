@@ -1,51 +1,45 @@
-let progressElement = document.getElementById('user-progress');
-let start = 100;
-
-function userProgress(time){
-    var time = Math.round(time * 1000/100);
+let petBar = 42;
+let time = Math.round(time * 1000/100);
+function petProgress(time){
+    //var time = Math.round(time * 1000/100);
     let intervalId = setInterval(function (){
-        if (start < 0){
-            clearInterval(intervalId);
-            userProgressCallBack();
+        if (petBar <= 0){
+            petBar = 'pet died';
+            clearInterval(time)
+            document.getElementById("petBar").innerHTML = petBar;
+            petProgressCallBack();
         } else {
-            progressElement.value = start;
-            start = start - 0.2;
+            petBar = petBar - 1;
+            petBar.style.width = petBar + '%';
+            document.getElementById("petBar").innerHTML = petBar + '%';
         }
     }, time)
-
 }
 
 function feed(){
-    start = progressElement.value + 20;
+    petBar = petBar.value + 20;
 }
 function clean(){
-    start = progressElement.value + 10;
+    petBar = petBar.value + 10;
 }
 function play(){
-    start = progressElement.value + 5;
+    petBar = petBar.value + 5;
 }
 function drink(){
-    start = progressElement.value + 15;
+    petBar = petBar.value + 15;
 }
 function call(){
-    start = progressElement.value + 3;
+    petBar = petBar.value + 3;
 }
 function scratch(){
-    start = progressElement.value + 5;
+    petBar = petBar.value + 5;
 }
 
 function userProgressCallBack(){
     document.querySelector('.hidden-block').style.display = 'block'
 }
-userProgress(10);
+petProgress(10);
 
-/*
-let health = 42;
-let satiety = 100;//сытость
-let joy = 100;  //радость
-let purity = 100; //чистота
-*/
-/*ProgressBar*/
 /*
 let time2 = setInterval(function life (){
     if (health <= 0){
@@ -75,31 +69,7 @@ function move(){
     }
 }
 */
-/*Health*/
-/*
-function cure() {
-    if (health < 100){
-        health = health + 5;
-    } else if(health >= 100){
-        health = 100;
-        document.getElementById("health").innerHTML = health;
-    }
-}
-let time = setInterval(function life (){
-        if (health <= 0){
-            health = 'pet died';
-            clearInterval(time)
-            document.getElementById("health").innerHTML = health;
-        } else{
-            --health;
-            var elem = document.getElementById('health');
-            elem.style.healtth = health + '%';
-            document.getElementById("health").innerHTML = health + '%';
 
-
-        }
-    }, 100)
-*/
 
 
 

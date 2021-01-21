@@ -6,8 +6,15 @@
     <link rel="stylesheet" href="style_V2.css" type="text/css">
 </head>
 <body>
-<progress id="user-progress" value="42" max="100">42%</progress>
+<img src="images/animal.gif">
+<p>Life:</p>
+<div id="petProgress">
+    <div id="petBar">
+        <div id="label">42%</div>
+    </div>
+</div>
 <div class="hidden-block"> Hello pets!</div>
+
 <div class="button-wrap">
     <button onclick="feed()">feed pets</button>
     <button onclick="clean()">to clean</button>
@@ -17,27 +24,8 @@
     <button onclick="scratch()">scratch</button>
 </div>
 
-<!--
-<img src="images/animal.gif">
+<button onclick="cure()" class="button_cure">Pull through</button>
 
-<p>Health:</p>
-<div id="myProgress">
-    <div id="myBar">
-        <div id="label">42%</div>
-    </div>
-</div>
-<button onclick="move()" class="button">Click</button>
-
-
-<div id="menu">
-    <div id="name"><p>Health:</p>
-        <div id="health" class="volume">42</div>
-    </div>
-</div>
-<button onclick="cure()" class="button">Pull through</button>
-
-
--->
 <script src="script_V2.js"></script>
 </body>
 </html>

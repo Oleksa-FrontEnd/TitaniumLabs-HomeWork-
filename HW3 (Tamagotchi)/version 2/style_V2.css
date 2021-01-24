@@ -3,14 +3,14 @@
     width: 420px;
     height: 30px;
     background-color: silver;
+    text-align: center;
 }
 #petBar{
     position: absolute;
-    width: 42%;
+    width: 100%;
+    max-width: 420px;
     height: 100%;
     background-color: #4caf50;
-}
-#label{
     text-align: center;
     line-height: 30px;
     color: #ddd;
@@ -28,4 +28,6 @@ img{
 .hidden-block{
     display: none;
     color: firebrick;
+    text-align: center;
+    width: 420px;
 }

@@ -1,9 +1,7 @@
-let width = 42 ;
-//let time = Math.round(time * 1000/100);
+let width = 100;
 function petProgress(time){
-    var time = Math.round(time * 1000/100);
-    var elem = document.getElementById("petBar");
-    let intervalId = setInterval(frame, 10);
+    let elem = document.getElementById("petBar");
+    let intervalId = setInterval(frame, 100);
 
     function frame(){
         if (width <= 0){
@@ -14,27 +12,25 @@ function petProgress(time){
             elem.style.width = width + 'px';
             elem.innerHTML = width  + '%';
           }
-
     }
 }
-
 function feed(){
     width = width + 10;
 }
 function clean(){
-    petBar = petBar.value + 10;
+    width = width + 10;
 }
 function play(){
-    petBar = petBar.value + 5;
+    width = width + 5;
 }
 function drink(){
-    petBar = petBar.value + 15;
+    width = width + 15;
 }
 function call(){
-    petBar = petBar.value + 3;
+    width = width + 3;
 }
 function scratch(){
-    petBar = petBar.value + 5;
+    width = width + 5;
 }
 
 function petProgressCallBack(){

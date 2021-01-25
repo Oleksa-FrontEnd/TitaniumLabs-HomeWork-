@@ -1,6 +1,6 @@
 #petProgress{
     position: relative;
-    width: 420px;
+    width: 400px;
     height: 30px;
     background-color: silver;
     text-align: center;
@@ -8,7 +8,7 @@
 #petBar{
     position: absolute;
     width: 100%;
-    max-width: 420px;
+    max-width: 400px;
     height: 100%;
     background-color: #4caf50;
     text-align: center;
@@ -22,12 +22,12 @@ button{
     margin: 5px 5px 0px 0px;
 }
 img{
-    width: 420px;
+    width: 400px;
     height: auto;
 }
 .hidden-block{
     display: none;
     color: firebrick;
     text-align: center;
-    width: 420px;
+    width: 400px;
 }

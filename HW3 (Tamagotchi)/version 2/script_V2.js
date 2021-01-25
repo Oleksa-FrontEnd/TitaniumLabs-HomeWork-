@@ -7,11 +7,16 @@ function petProgress(time){
         if (width <= 0){
             clearInterval(time)
             petProgressCallBack();
-        } else {
+        } else if (width >= 100){
+            width = 100;
+            elem.style.width = width*4 + 'px';
+            elem.innerHTML = width + '%';
             --width;
-            elem.style.width = width + 'px';
-            elem.innerHTML = width  + '%';
-          }
+        } else {
+            elem.style.width = width*4 + 'px';
+            elem.innerHTML = width + '%';
+            --width;
+        }
     }
 }
 function feed(){

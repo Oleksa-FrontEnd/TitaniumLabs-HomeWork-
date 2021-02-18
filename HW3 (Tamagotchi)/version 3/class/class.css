@@ -1,0 +1,22 @@
+body {
+    text-align: center;
+}
+.container {
+    margin: 0 auto;
+}
+
+.orange {
+    padding: 5px;
+    color: #fff;
+    background: orange;
+    width: 60%;
+    margin: 10px auto;
+
+}
+.blue {
+    padding: 5px;
+    color: #fff;
+    background: lightblue;
+    width: 60%;
+    margin: 0 auto;
+}

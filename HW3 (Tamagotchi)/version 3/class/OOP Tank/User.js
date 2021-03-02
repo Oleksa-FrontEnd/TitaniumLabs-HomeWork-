@@ -12,9 +12,18 @@ class User {
     getFullName() {
         return this._name + ' ' + this._surname;
     }
+    setAge(age) {
+        if (age >0 && age < 100){
+            return this._age = age;
+        }
+
+    }
+    getAge() {
+        return this._age;
+    }
 }
 
 let user = new User('Вася', 'Петров');
-console.log(user.getName());
-console.log(user.getSurName());
+user.setAge(250);
+console.log(user.getAge());
 console.log(user.getFullName());

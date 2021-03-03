@@ -24,6 +24,6 @@ class User {
 }
 
 let user = new User('Вася', 'Петров');
-user.setAge(250);
+user.setAge(99);
 console.log(user.getAge());
 console.log(user.getFullName());

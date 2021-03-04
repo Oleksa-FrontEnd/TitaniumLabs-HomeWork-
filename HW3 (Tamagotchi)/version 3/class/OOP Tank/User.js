@@ -13,13 +13,19 @@ class User {
         return this._name + ' ' + this._surname;
     }
     setAge(age) {
-        if (age >0 && age < 100){
-            return this._age = age;
+        if (this._chekAge(age)){
+            this._age = age;
         }
-
     }
     getAge() {
         return this._age;
+    }
+    _chekAge(age){
+        if (age >0 && age < 100){
+            return true;
+        } else {
+            return  false;
+        }
     }
 }
 

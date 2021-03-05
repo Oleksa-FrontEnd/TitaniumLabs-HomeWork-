@@ -1,11 +1,11 @@
 class Animal {
     constructor(animalName, kind, age){
-        this.animalName = animalName;
-        this.kind = kind;
+        this._animalName = animalName;
+        this._kind = kind;
         this.age = age;
     }
     validateKind(){
-        if (this.kind.length > 2){
+        if (this._kind.length > 2){
             return true;
         }
         return false;

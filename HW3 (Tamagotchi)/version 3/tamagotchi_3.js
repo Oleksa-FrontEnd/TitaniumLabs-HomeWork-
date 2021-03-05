@@ -4,7 +4,7 @@ let c = 423;
 const shrek = new Animal(a, b, c);
 
 console.log(shrek);
-console.log(shrek.animalName);
+console.log(shrek._animalName);
 console.log(shrek.validateKind());
 
 let firstAnimal = new Barboss(a, b, c);

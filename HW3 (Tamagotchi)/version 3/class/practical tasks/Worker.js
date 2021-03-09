@@ -6,14 +6,14 @@ class Worker {
         this._days = days;
 
     }
-    getName() {
-        return this._name;
-    }
-    getSurname() {
-        return this._surname;
+    setRate(rate) {
+        this._rate = rate;
     }
     getRate() {
         return this._rate;
+    }
+    setDays(days){
+        this._days = days;
     }
     getDays() {
         return this._days;
